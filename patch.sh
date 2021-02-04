@@ -1,11 +1,12 @@
 #!/bin/bash
 #
 # Author: REDD
-# Version: 1.0d
+# Version: 1.1
 # Contents: Checks on checks on checks on checks, then PATCH!
 #  - patch.sh
 #   |- patch/
-#    - patch/library.sh
+#   |- patch/library.sh
+#    - patch/library
 
 UI_DIR="/www/cgi-bin"
 PATCH_DIR="/tmp/patch"
@@ -35,10 +36,20 @@ function installlibrary(){
                 echo -e "[+] Library Module found in patch directory. Continuing."
 			fi
 			if [ ! -f "${PATCH_DIR}/library.sh" ]; then
-                echo -e "[!] No Patch in patch directory. Please download the patch module for this script."
+                echo -e "[!] No Library Module in patch directory. Please download the patch module for this script."
+                exit 0;
+			fi
+			if [ -f "${PATCH_DIR}/library" ]; then
+                echo -e "[+] library command found in patch directory. Continuing."
+			fi
+			if [ ! -f "${PATCH_DIR}/library" ]; then
+                echo -e "[!] No library command in patch directory. Please download the patch module for this script."
                 exit 0;
 			fi
 		fi
+		echo -e "[+] Installing library command (library shell extension) for SharkJack 1.1.0"
+		sleep 2;
+		bash "${PATCH_DIR}/library" "--install-library"
         echo -e "[+] Installing Payload Library Module for SharkJack 1.1.0"
                 sleep 2;
                 echo -e "  [+] Installing Payload Library into UI directory."
@@ -101,6 +112,11 @@ function removelibrary(){
 						echo -e "[!] Removing Library Module from UI directory."
 						rm "${UI_DIR}/library.sh"
 						echo -e  "[+] Library Module Removed."
+				fi
+				if [ -f "/usr/sbin/payloads" ]; then
+						echo -e "[!] Removing payloads command (library shell extension)."
+						rm "/usr/sbin/payloads"
+						echo -e "[+] payloads command removed."
 				fi
 }
 
