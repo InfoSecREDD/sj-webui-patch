@@ -1,7 +1,7 @@
 @echo off
 REM
 REM Name:         SharkJack Unofficial Payload Library UI (Windows 10 Patcher)
-REM Version:      1.0d
+REM Version:      1.1
 REM Author:       REDD
 REM Target OS:    Windows 10
 REM Description:  This is the patch script for the Unofficial
@@ -60,7 +60,10 @@ echo.
 echo  -^> Copying patch installer.
 scp "%CD%\patch.sh" "root@%SHARK_IP%:/tmp/patch.sh"
 echo.
-echo  -^> Copying patch content.
+echo  -^> Copying patch content. (library command)
+scp "%CD%\patch\library" root@%SHARK_IP%:/tmp/patch/library
+echo.
+echo  -^> Copying patch content. (library.sh)
 scp "%CD%\patch\library.sh" root@%SHARK_IP%:/tmp/patch/library.sh
 echo.
 echo  -^> Executing patcher, and fixing permissions.
