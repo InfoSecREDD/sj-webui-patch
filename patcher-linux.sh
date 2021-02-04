@@ -117,7 +117,7 @@ function install_patch(){
         echo -e " -> Copying patch installer."
         scp "${PWD}/patch.sh" "root@${SHARK_IP}:/tmp/patch.sh"
         echo -e ""
-        echo  -e "-> Copying patch content. (payloads command)"
+        echo  -e "-> Copying patch content. (library command)"
         scp "${PWD}/patch/library" root@${SHARK_IP}:/tmp/patch/library
         echo -e ""
         echo  -e "-> Copying patch content. (library.sh)"
