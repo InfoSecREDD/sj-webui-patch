@@ -114,9 +114,9 @@ function removelibrary(){
 						echo -e  "[+] Library Module Removed."
 				fi
 				if [ -f "/usr/sbin/payloads" ]; then
-						echo -e "[!] Removing payloads command (library shell extension)."
-						rm "/usr/sbin/payloads"
-						echo -e "[+] payloads command removed."
+						echo -e "[!] Removing library command (library shell extension)."
+						rm "/usr/sbin/library"
+						echo -e "[+] library command removed."
 				fi
 }
 
