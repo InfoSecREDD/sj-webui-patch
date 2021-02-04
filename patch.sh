@@ -113,7 +113,7 @@ function removelibrary(){
 						rm "${UI_DIR}/library.sh"
 						echo -e  "[+] Library Module Removed."
 				fi
-				if [ -f "/usr/sbin/payloads" ]; then
+				if [ -f "/usr/sbin/library" ]; then
 						echo -e "[!] Removing library command (library shell extension)."
 						rm "/usr/sbin/library"
 						echo -e "[+] library command removed."
