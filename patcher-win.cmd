@@ -8,6 +8,9 @@ REM Description:  This is the patch script for the Unofficial
 REM               SharkJack Payload Library. -Enjoy
 REM
 
+REM Setting Directory.
+cd /D "%~dp0"
+
 SET "SHARK_IP=172.16.24.1"
 cls
 echo Please put SharkJack into Arming Mode and
