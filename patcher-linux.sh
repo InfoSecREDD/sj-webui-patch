@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 # Name:         SharkJack Unofficial Payload Library UI (Unix/MAC Patcher)
-# Version:      1.0d
+# Version:      1.1
 # Author:       REDD
 # Target OS:    Unix/MAC
 # Description:  This is the patch script for the Unofficial
@@ -117,7 +117,10 @@ function install_patch(){
         echo -e " -> Copying patch installer."
         scp "${PWD}/patch.sh" "root@${SHARK_IP}:/tmp/patch.sh"
         echo -e ""
-        echo  -e "-> Copying patch content."
+        echo  -e "-> Copying patch content. (payloads command)"
+        scp "${PWD}/patch/library" root@${SHARK_IP}:/tmp/patch/library
+        echo -e ""
+        echo  -e "-> Copying patch content. (library.sh)"
         scp "${PWD}/patch/library.sh" root@${SHARK_IP}:/tmp/patch/library.sh
         echo -e ""
         echo -e " -> Executing patcher, and fixing permissions."
