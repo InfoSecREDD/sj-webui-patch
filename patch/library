@@ -2,14 +2,14 @@
 #
 # Title:         SharkJack Payload Library - Shell (Formerly SharkLib)
 # Author:        REDD
-# Version:       1.4
+# Version:       1.4.1
 #
 # This Script is to be ran on the Hak5 SharkJack itself. This Script
 # makes switching between local stored payloads quick and simple.
 #
 
 VERS=1.4
-LIB_DIR="/root/library"
+LIB_DIR="/root/payload/library"
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 START_DIR="$DIR"
 INSTALL_DIR="/usr/sbin"
