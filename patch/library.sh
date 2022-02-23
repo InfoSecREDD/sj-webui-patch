@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo -e "Content-type: text/html\n\n"
-PAYLOAD_DIR="/root/library"
+PAYLOAD_DIR="/root/payload/library"
 MAIN_PAYLOAD="/root/payload"
 
 # Adding library folder to the Root Directory.
